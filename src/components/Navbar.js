@@ -23,6 +23,11 @@ const routingMap = [
     pageName: "Blog",
     pageRoute: "/blog",
   },
+  {
+    id: 3,
+    pageName: "Paginate",
+    pageRoute: "/paginate",
+  },
 ];
 
 function Navbar() {
@@ -114,7 +119,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            HASHAM
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {routingMap.map((item) => (

@@ -11,7 +11,7 @@ import Paper from "@mui/material/Paper";
 export default function Blog() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +33,7 @@ export default function Blog() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-  if (isLoading) {
+  if (isLoading === true) {
     return <div>Loading...</div>;
   }
   return (
