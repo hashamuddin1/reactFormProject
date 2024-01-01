@@ -123,18 +123,18 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {routingMap.map((item) => (
-              <Button
-                key={item.id}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+              <Link
+                to={item.pageRoute}
+                style={{ color: "white", textDecoration: "none" }}
               >
-                <Link
-                  to={item.pageRoute}
-                  style={{ color: "white", textDecoration: "none" }}
+                <Button
+                  key={item.id}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {item.pageName}
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
