@@ -1,0 +1,8 @@
+.formMain {
+  width: 40%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
