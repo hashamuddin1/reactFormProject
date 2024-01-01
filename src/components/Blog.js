@@ -8,10 +8,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-function createData(PostId, Name, Email, Body) {
-  return { PostId, Name, Email, Body };
-}
-
 export default function Blog() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -41,16 +37,34 @@ export default function Blog() {
     return <div>Loading...</div>;
   }
   return (
-    <div>
-      <div>
-        {data && (
-          <ul>
+    <>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Post ID</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Email Address</TableCell>
+              <TableCell align="center">Body</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
             {data.map((item) => (
-              <li key={item.id}>{item.name}</li>
+              <TableRow
+                key={item.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {item.postId}
+                </TableCell>
+                <TableCell align="center">{item.name}</TableCell>
+                <TableCell align="center">{item.email}</TableCell>
+                <TableCell align="center">{item.body}</TableCell>
+              </TableRow>
             ))}
-          </ul>
-        )}
-      </div>
-    </div>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 }
